@@ -129,5 +129,28 @@ public class Main {
 
 		}	
 		*/
+
+		//-------------------------------------------
+
+		/*				Loopings
+		int contador = 0;
+		while(contador < 11)
+		{
+			System.out.println(contador++);
+		}
+		for(int i = 0; i < 10; i++)
+		{
+			System.out.println(i);
+		}
+		
+		int contador = 0;
+		do
+		{
+			System.out.println(contador);
+			contador++;
+		}
+		while(contador < 3);
+		*/
+		
 	}
 }
