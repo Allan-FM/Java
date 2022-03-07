@@ -1,4 +1,3 @@
-import javax.swing.plaf.basic.BasicInternalFrameTitlePane.SystemMenuBar;
 
 public class Main {
 	public static void main(String[] args)
@@ -95,7 +94,7 @@ public class Main {
 		
 		//-------------------------------------------
 
-		// 			Switch - Case
+		/* 			Switch - Case
 		int vida = 100;
 		switch(vida)
 		{
@@ -109,5 +108,26 @@ public class Main {
 			System.out.println("Nenhum condicao bateu!");
 				break;
 		}
+		*/
+
+		//-------------------------------------------
+
+
+		/*				 Operações avançadas e operações matemáticas
+		int vida1 = 100;
+		int vida2 = 200;
+		int vida3 = 300;
+		int vidaFinal = vida1 + vida2 + vida3;
+		//System.out.println(vidaFinal);
+		//System.out.println((vida2 - vida1) / 2 + vida3);
+		
+		String nomeDoPlayer = "Mathues";
+		// && , ||, >=
+		if(nomeDoPlayer != "Allan")
+		{
+			System.out.println("Começar o jogo!");
+
+		}	
+		*/
 	}
 }
