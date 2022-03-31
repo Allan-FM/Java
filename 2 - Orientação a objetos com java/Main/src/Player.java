@@ -2,14 +2,9 @@
 
 public class Player
 {
-    public void playerStart()
+    protected void nascer()
     {
-        System.out.println("Jogador iniciado!");
+        System.out.println("Nasceu...");
     }
-    public int playerLife(int life)
-    {
-        life = 10;
-        System.out.println(life);
-        return  life;
-    }
+   
 }
