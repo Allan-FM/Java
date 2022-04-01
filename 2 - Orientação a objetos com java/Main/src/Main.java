@@ -1,30 +1,23 @@
 public class Main
 {
-	//public, private, protected
-	//static
-	//void, int, string
 	
+	private String nome = "Allan";
+	private int[] numeros;
+	public static final int VIDA_MAXIMA = 100;
+	
+	
+	//Metodo construtor
+	public Main()
+	{
+		numeros = new int[100];
+	}
+	public String getNome()
+	{
+		return nome;
+	}
 	public static void main(String[] args)
 	{
-		/*
-		Player player = new Player();
-		player.nascer();
-		Player2 player2 = new Player2();
-		player2.outroMetodo();
-		*/
-		
-		int[] n1 = new int[3];
-		String[] nome = new String[3];
-		n1[0] = 10;
-		nome[0] = "Allan";
-		
-		new Main().OutroMetodo(n1, nome);
-		
-	}
-	
-	public void OutroMetodo(int[] n1, String[] nome)
-	{
-		System.out.println(n1[0]);
-		System.out.println(nome[0]);
+		Main main =  new Main();
+		System.out.println(main.getNome());
 	}
 }
