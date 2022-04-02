@@ -1,8 +1,8 @@
 
-public class Player2 extends Player 
+public class Player2
 {
 	public void outroMetodo()
 	{
-		this.nascer();
+		
 	}
 }

@@ -2,9 +2,12 @@
 
 public class Player
 {
-    protected void nascer()
-    {
-        System.out.println("Nasceu...");
-    }
+	public int vidaInicial, tempo;
+	public Player(int vidaInicial, int tempo)
+	{
+		this.vidaInicial = vidaInicial;
+		System.out.println(this.vidaInicial);
+		
+	}
    
 }

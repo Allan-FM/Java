@@ -1,4 +1,4 @@
-public class Main
+public class Main extends Player
 {
 	
 	private String nome = "Allan";
@@ -7,8 +7,10 @@ public class Main
 	
 	
 	//Metodo construtor
-	public Main()
+	public Main(int n1, int n2)
 	{
+		super(n1, n2);
+		this.vidaInicial = 111;
 		numeros = new int[100];
 	}
 	public String getNome()
@@ -17,7 +19,7 @@ public class Main
 	}
 	public static void main(String[] args)
 	{
-		Main main =  new Main();
+		Main main =  new Main(100, 200);
 		System.out.println(main.getNome());
 	}
 }
