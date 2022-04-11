@@ -1,6 +1,7 @@
 import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
@@ -15,8 +16,8 @@ public class Game extends Canvas implements Runnable
 
     private boolean isRunning = true;
 
-    private final int width = 160;
-    private final int height = 120;
+    private final int width = 240;
+    private final int height = 160;
     private final int scale = 3;
     
     private BufferedImage image;
@@ -45,7 +46,14 @@ public class Game extends Canvas implements Runnable
     }
     public synchronized void stop()
     {
-
+    	isRunning = false;
+    	try 
+    	{
+			thread.join();
+		} catch (InterruptedException e) 
+    	{
+			e.printStackTrace();
+		}
     }
     
 
@@ -86,6 +94,7 @@ public class Game extends Canvas implements Runnable
                 timer+= 1000;
             }
         }
+        stop();
     }
     public void tick()
     {
@@ -100,8 +109,16 @@ public class Game extends Canvas implements Runnable
         	return;
         }
         Graphics g = image.getGraphics();
-        g.setColor(Color.red);
+        g.setColor(Color.black);
         g.fillRect(0, 0, width, height);
+        
+        g.setColor(Color.GREEN);
+        g.fillOval(50, 20, 50, 50);
+        
+        g.setFont(new Font("Arial", Font.BOLD, 20));
+        g.setColor(Color.white);
+        g.drawString("Olá", 20, 20);
+        
         g = bs.getDrawGraphics();
         g.drawImage(image, 0, 0, width * scale, height * scale, null);
         bs.show();
