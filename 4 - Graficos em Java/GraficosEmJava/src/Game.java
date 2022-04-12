@@ -20,10 +20,16 @@ public class Game extends Canvas implements Runnable
     private final int height = 160;
     private final int scale = 3;
     
+    private int x = 0;
+    
     private BufferedImage image;
+    private BufferedImage playerSprite;
+    private SpriteSheet spriteSheet;
 
     public Game() 
     {
+    	spriteSheet = new SpriteSheet("/sprite.png");
+    	playerSprite = spriteSheet.getSprite(0,0,13,16);
         setPreferredSize(new Dimension(width * scale, height * scale));
         initFrame();
         image = new BufferedImage(width, height,BufferedImage.TYPE_INT_RGB);
@@ -98,7 +104,7 @@ public class Game extends Canvas implements Runnable
     }
     public void tick()
     {
-
+    	x++;
     }
     public void render()
     {
@@ -109,16 +115,14 @@ public class Game extends Canvas implements Runnable
         	return;
         }
         Graphics g = image.getGraphics();
-        g.setColor(Color.black);
+        g.setColor(Color.white);
         g.fillRect(0, 0, width, height);
         
-        g.setColor(Color.GREEN);
-        g.fillOval(50, 20, 50, 50);
+        /*renderizando o jogador*/
+        g.drawImage(playerSprite,x,20,null);
         
-        g.setFont(new Font("Arial", Font.BOLD, 20));
-        g.setColor(Color.white);
-        g.drawString("Olá", 20, 20);
         
+        g.dispose();
         g = bs.getDrawGraphics();
         g.drawImage(image, 0, 0, width * scale, height * scale, null);
         bs.show();
